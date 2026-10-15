@@ -1,0 +1,3 @@
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+@Component({ selector:'app-skeleton', standalone:true, template:'<div class="skeleton" [style.height]="height" [style.width]="width" aria-hidden="true"></div>', styles:[`.skeleton { min-width:3rem; min-height:1rem; border-radius:.5rem; background:linear-gradient(100deg,var(--color-surface-muted) 30%,var(--color-primary-100) 50%,var(--color-surface-muted) 70%); background-size:200% 100%; animation:shimmer 1.5s infinite; } @keyframes shimmer { to { background-position:-200% 0; } } @media(prefers-reduced-motion:reduce){.skeleton{animation:none;}}`], changeDetection:ChangeDetectionStrategy.OnPush })
+export class SkeletonComponent { @Input() width='100%'; @Input() height='1rem'; }

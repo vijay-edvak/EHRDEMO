@@ -1,0 +1,3 @@
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+@Component({ selector:'app-badge', standalone:true, template:'<span class="badge" [class]="tone">{{ label }}</span>', styles:[`.badge { display:inline-flex; align-items:center; padding:.35rem .65rem; border-radius:var(--radius-pill); font-size:.72rem; font-weight:700; } .success { color:#087565;background:var(--color-primary-100); } .warning { color:#8a5a10;background:#fff4d6; } .danger { color:#9c3829;background:var(--color-coral-soft); } .neutral { color:var(--color-text-muted);background:var(--color-surface-muted); }`], changeDetection:ChangeDetectionStrategy.OnPush })
+export class BadgeComponent { @Input() label='Active'; @Input() tone:'success'|'warning'|'danger'|'neutral'='success'; }

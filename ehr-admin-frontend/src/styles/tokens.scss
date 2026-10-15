@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-primary-50: #effcf8; --color-primary-100: #d8f7ee; --color-primary-500: #159b83;
+  --color-primary-700: #087565; --color-primary-900: #064b43;
+  --color-surface: #ffffff; --color-surface-soft: #effcf8; --color-surface-muted: #f8fafc;
+  --color-text: #0f172a; --color-text-muted: #64748b; --color-border: #dbe7e4;
+  --color-coral: #ef765e; --color-coral-soft: #fff1ed; --color-success: #1e9b73;
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-5: 1.25rem;
+  --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem;
+  --radius-sm: .5rem; --radius-md: .75rem; --radius-lg: 1rem; --radius-xl: 1.5rem; --radius-pill: 999px;
+  --shadow-sm: 0 4px 16px rgba(6,75,67,.07); --shadow-md: 0 18px 50px rgba(6,75,67,.10); --shadow-lg: 0 25px 70px rgba(6,75,67,.16);
+  --z-base: 0; --z-sticky: 20; --z-header: 30; --z-overlay: 50; --z-modal: 60;
+  --font-display: 'DM Sans', sans-serif; --font-ui: 'Inter', sans-serif;
+}
+
+[data-theme='dark'] {
+  --color-surface: #102a28; --color-surface-soft: #143934; --color-surface-muted: #0d211f;
+  --color-text: #e7f6f2; --color-text-muted: #a8c4bd; --color-border: #28534d;
+  --color-primary-50: #143934; --color-primary-100: #1b5148; --color-coral-soft: #432c29;
+}

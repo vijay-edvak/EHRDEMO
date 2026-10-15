@@ -1,0 +1,3 @@
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+@Component({ selector:'app-card', standalone:true, template:'<section class="card" [class.card--interactive]="interactive"><ng-content /></section>', styles:[`.card { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-xl); box-shadow:var(--shadow-sm); padding:1.25rem; } .card--interactive { transition:transform .25s, box-shadow .25s; } .card--interactive:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }`], changeDetection:ChangeDetectionStrategy.OnPush })
+export class CardComponent { @Input() interactive=false; }
