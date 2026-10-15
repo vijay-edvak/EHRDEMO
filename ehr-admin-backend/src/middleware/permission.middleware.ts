@@ -1,0 +1,2 @@
+import type { RequestHandler } from 'express'; import { hasPermission } from '../services/rbac.service';
+export function requirePermission(...codes:string[]):RequestHandler{return async (req,res,next)=>{if(!req.userId)return res.status(401).json({error:'Authentication required.',requestId:req.requestId});try{if(!(await hasPermission(req.userId,codes)))return res.status(403).json({error:'Permission denied.',requiredPermissions:codes,requestId:req.requestId});return next();}catch(error){return next(error);}};}

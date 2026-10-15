@@ -1,0 +1,9 @@
+{
+  "practice": ["read", "create", "update", "delete"],
+  "invoice": ["read", "create", "update", "approve", "export"],
+  "user": ["read", "create", "update", "assign-role"],
+  "audit": ["read", "export"],
+  "security": ["read", "manage"],
+  "role": ["read", "create", "update", "delete"],
+  "permission": ["read", "manage"]
+}

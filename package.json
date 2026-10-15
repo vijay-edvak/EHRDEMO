@@ -9,7 +9,8 @@
     "lint": "npm run lint --workspace=ehr-admin-backend && npm run lint --workspace=ehr-admin-frontend",
     "test": "npm run test --workspace=ehr-admin-backend && npm run test --workspace=ehr-admin-frontend -- --watch=false",
     "build": "npm run build --workspace=ehr-admin-backend && npm run build --workspace=ehr-admin-frontend",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "generate:permissions": "node tools/generate-permissions.mjs"
   },
   "devDependencies": {
     "prettier": "^3.3.3",

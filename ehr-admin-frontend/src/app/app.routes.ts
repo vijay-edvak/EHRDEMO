@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { permissionGuard } from './core/rbac/permission.guard';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', loadComponent: () => import('./features/landing/landing.component').then((m) => m.LandingComponent) },
@@ -14,6 +15,7 @@ export const routes: Routes = [
     children: [
       { path: 'dashboard', loadComponent: () => import('./features/dashboard/dashboard.component').then((m) => m.DashboardComponent) },
       { path: 'devices', loadComponent: () => import('./features/devices/devices.component').then((m) => m.DevicesComponent) },
+      { path: 'roles', canMatch: [permissionGuard('role.read')], loadComponent: () => import('./features/roles/roles.component').then((m) => m.RolesComponent) },
     ],
   },
   { path: '**', redirectTo: '' },
