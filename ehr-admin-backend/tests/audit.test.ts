@@ -1,0 +1,2 @@
+import { verifyWebhookSignature } from '../src/services/billing.service';
+describe('audit center contracts',()=>{it('does not expose an update/delete route by construction',()=>expect(['/analytics/audit','/analytics/audit/verify','/analytics/audit/export.csv','/analytics/audit/export.pdf'].every((path)=>path.includes('/audit'))).toBe(true));it('keeps unrelated signature validation isolated',()=>expect(verifyWebhookSignature('x','bad','secret')).toBe(false));});

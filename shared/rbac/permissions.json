@@ -27,7 +27,7 @@
     "import"
   ],
   "audit": [
-    "read",
+    "view",
     "export"
   ],
   "security": [
@@ -88,5 +88,13 @@
     "cancel",
     "pause",
     "resume"
+  ],
+  "dashboard": [
+    "view",
+    "users",
+    "revenue",
+    "security",
+    "approvals",
+    "export"
   ]
 }

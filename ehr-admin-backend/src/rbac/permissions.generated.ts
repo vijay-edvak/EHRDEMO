@@ -43,7 +43,7 @@ export const PERMISSION_GROUPS = [
     "name": "Audit operations",
     "module": "audit",
     "codes": [
-      "audit.read",
+      "audit.view",
       "audit.export"
     ]
   },
@@ -141,6 +141,18 @@ export const PERMISSION_GROUPS = [
       "subscription.pause",
       "subscription.resume"
     ]
+  },
+  {
+    "name": "Dashboard operations",
+    "module": "dashboard",
+    "codes": [
+      "dashboard.view",
+      "dashboard.users",
+      "dashboard.revenue",
+      "dashboard.security",
+      "dashboard.approvals",
+      "dashboard.export"
+    ]
   }
 ] as const;
 export const PERMISSION_CODES = [
@@ -165,7 +177,7 @@ export const PERMISSION_CODES = [
   "user.assign-role",
   "user.export",
   "user.import",
-  "audit.read",
+  "audit.view",
   "audit.export",
   "security.read",
   "security.manage",
@@ -207,6 +219,12 @@ export const PERMISSION_CODES = [
   "subscription.update",
   "subscription.cancel",
   "subscription.pause",
-  "subscription.resume"
+  "subscription.resume",
+  "dashboard.view",
+  "dashboard.users",
+  "dashboard.revenue",
+  "dashboard.security",
+  "dashboard.approvals",
+  "dashboard.export"
 ] as const;
 export type PermissionCode = typeof PERMISSION_CODES[number];
