@@ -1,0 +1,3 @@
+import { Schema, model } from 'mongoose';
+const adminUserSchema = new Schema({ email:{type:String,required:true,unique:true,index:true}, passwordHash:{type:String,required:true}, passwordHistory:{type:[String],default:[]}, passwordChangedAt:{type:Date,required:true}, failedAttempts:{type:Number,default:0}, lockedUntil:Date, mfaSecret:String, mfaEnabled:{type:Boolean,default:false}, backupCodeHashes:{type:[String],default:[]}, roles:{type:[String],default:[]}, createdAt:{type:Date,default:Date.now} }, { collection:'admin_users', versionKey:false });
+export const AdminUserModel = model('AdminUser', adminUserSchema);

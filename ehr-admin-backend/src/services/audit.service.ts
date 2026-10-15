@@ -1,0 +1,3 @@
+import { AuditLogModel, SecurityEventModel } from '../models/security.models'; import type { AuthAction, AuthStatus } from '../types/auth';
+export async function writeAudit(event:{userId?:string;action:AuthAction;ip:string;device:string;status:AuthStatus;metadata?:unknown}):Promise<void>{ if(process.env.NODE_ENV==='test') return; await AuditLogModel.create({ ...event,module:'auth',timestamp:new Date() }); }
+export async function writeSecurityEvent(event:{userId?:string;email?:string;score:number;reasons:string[];ip:string;userAgent:string;city?:string}):Promise<void>{ if(process.env.NODE_ENV==='test') return; await SecurityEventModel.create({ ...event,createdAt:new Date() }); }

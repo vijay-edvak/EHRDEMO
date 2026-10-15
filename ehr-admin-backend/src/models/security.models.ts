@@ -1,0 +1,6 @@
+import { Schema, model } from 'mongoose';
+const auditSchema = new Schema({ userId:String, action:{type:String,required:true}, module:{type:String,required:true}, ip:String, device:String, status:String, metadata:Schema.Types.Mixed, timestamp:{type:Date,default:Date.now,index:true} }, { collection:'audit_logs', versionKey:false });
+const securitySchema = new Schema({ userId:String, email:String, score:Number, reasons:[String], ip:String, userAgent:String, city:String, createdAt:{type:Date,default:Date.now,index:true} }, { collection:'security_events', versionKey:false });
+const deviceSchema = new Schema({ userId:{type:String,index:true}, fingerprintHash:String, userAgent:String, ip:String, city:String, firstSeen:Date, lastSeen:Date, trusted:Boolean, revokedAt:Date }, { collection:'devices', versionKey:false });
+const refreshSchema = new Schema({ userId:String, familyId:{type:String,index:true}, tokenHash:{type:String,index:true}, replacedBy:String, revokedAt:Date, expiresAt:Date }, { collection:'refresh_sessions', versionKey:false });
+export const AuditLogModel=model('AuditLog', auditSchema); export const SecurityEventModel=model('SecurityEvent',securitySchema); export const DeviceModel=model('Device',deviceSchema); export const RefreshSessionModel=model('RefreshSession',refreshSchema);
