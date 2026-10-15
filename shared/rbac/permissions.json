@@ -49,5 +49,28 @@
     "delete",
     "assign-manager",
     "export"
+  ],
+  "workflow": [
+    "read",
+    "create",
+    "update",
+    "approve",
+    "reject",
+    "admin"
+  ],
+  "access": [
+    "read",
+    "create",
+    "approve",
+    "reject",
+    "grant",
+    "revoke",
+    "break-glass"
+  ],
+  "delegation": [
+    "read",
+    "create",
+    "revoke",
+    "admin"
   ]
 }

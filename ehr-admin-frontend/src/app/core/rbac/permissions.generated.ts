@@ -82,6 +82,41 @@ export const PERMISSION_GROUPS = [
       "department.assign-manager",
       "department.export"
     ]
+  },
+  {
+    "name": "Workflow operations",
+    "module": "workflow",
+    "codes": [
+      "workflow.read",
+      "workflow.create",
+      "workflow.update",
+      "workflow.approve",
+      "workflow.reject",
+      "workflow.admin"
+    ]
+  },
+  {
+    "name": "Access operations",
+    "module": "access",
+    "codes": [
+      "access.read",
+      "access.create",
+      "access.approve",
+      "access.reject",
+      "access.grant",
+      "access.revoke",
+      "access.break-glass"
+    ]
+  },
+  {
+    "name": "Delegation operations",
+    "module": "delegation",
+    "codes": [
+      "delegation.read",
+      "delegation.create",
+      "delegation.revoke",
+      "delegation.admin"
+    ]
   }
 ] as const;
 export const PERMISSION_CODES = [
@@ -119,6 +154,23 @@ export const PERMISSION_CODES = [
   "department.update",
   "department.delete",
   "department.assign-manager",
-  "department.export"
+  "department.export",
+  "workflow.read",
+  "workflow.create",
+  "workflow.update",
+  "workflow.approve",
+  "workflow.reject",
+  "workflow.admin",
+  "access.read",
+  "access.create",
+  "access.approve",
+  "access.reject",
+  "access.grant",
+  "access.revoke",
+  "access.break-glass",
+  "delegation.read",
+  "delegation.create",
+  "delegation.revoke",
+  "delegation.admin"
 ] as const;
 export type PermissionCode = typeof PERMISSION_CODES[number];

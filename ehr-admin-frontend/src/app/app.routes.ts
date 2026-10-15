@@ -20,6 +20,8 @@ export const routes: Routes = [
       { path: 'practice-users', canMatch: [permissionGuard('user.read')], loadComponent: () => import('./features/practice-users/practice-user-list.component').then((m) => m.PracticeUserListComponent) },
       { path: 'practices', canMatch: [permissionGuard('practice.read')], loadComponent: () => import('./features/practices/practice-list.component').then((m) => m.PracticeListComponent) },
       { path: 'departments', canMatch: [permissionGuard('department.read')], loadComponent: () => import('./features/departments/department-list.component').then((m) => m.DepartmentListComponent) },
+      { path: 'requests', canMatch: [permissionGuard('access.read')], loadComponent: () => import('./features/requests/request-portal.component').then((m) => m.RequestPortalComponent) },
+      { path: 'workflow-builder', canMatch: [permissionGuard('workflow.read')], loadComponent: () => import('./features/workflow-builder/workflow-builder.component').then((m) => m.WorkflowBuilderComponent) },
     ],
   },
   { path: '**', redirectTo: '' },

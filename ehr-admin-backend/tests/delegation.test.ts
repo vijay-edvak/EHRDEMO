@@ -1,0 +1,2 @@
+import { effectivePermissions } from '../src/services/rbac.service'; import { __rbacCache } from '../src/services/rbac.service';
+describe('delegation limits',()=>{it('uses cached permissions as the delegation ceiling',()=>{__rbacCache.cache.set('delegator',{expires:Date.now()+1000,permissions:new Set(['invoice.read'])});return expect(effectivePermissions('delegator')).resolves.toEqual(new Set(['invoice.read']));});});
