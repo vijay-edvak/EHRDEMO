@@ -8,7 +8,8 @@
     "lint": "eslint . --ext .ts",
     "test": "jest --runInBand",
     "seed:rbac": "tsx scripts/seed-rbac.ts",
-    "migrate:rbac": "tsx scripts/migrate-rbac.ts"
+    "migrate:rbac": "tsx scripts/migrate-rbac.ts",
+    "seed:departments": "tsx scripts/seed-departments.ts"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

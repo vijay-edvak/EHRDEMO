@@ -7,7 +7,9 @@ export const PERMISSION_GROUPS = [
       "practice.read",
       "practice.create",
       "practice.update",
-      "practice.delete"
+      "practice.delete",
+      "practice.status",
+      "practice.export"
     ]
   },
   {
@@ -28,7 +30,11 @@ export const PERMISSION_GROUPS = [
       "user.read",
       "user.create",
       "user.update",
-      "user.assign-role"
+      "user.delete",
+      "user.status",
+      "user.assign-role",
+      "user.export",
+      "user.import"
     ]
   },
   {
@@ -64,6 +70,18 @@ export const PERMISSION_GROUPS = [
       "permission.read",
       "permission.manage"
     ]
+  },
+  {
+    "name": "Department operations",
+    "module": "department",
+    "codes": [
+      "department.read",
+      "department.create",
+      "department.update",
+      "department.delete",
+      "department.assign-manager",
+      "department.export"
+    ]
   }
 ] as const;
 export const PERMISSION_CODES = [
@@ -71,6 +89,8 @@ export const PERMISSION_CODES = [
   "practice.create",
   "practice.update",
   "practice.delete",
+  "practice.status",
+  "practice.export",
   "invoice.read",
   "invoice.create",
   "invoice.update",
@@ -79,7 +99,11 @@ export const PERMISSION_CODES = [
   "user.read",
   "user.create",
   "user.update",
+  "user.delete",
+  "user.status",
   "user.assign-role",
+  "user.export",
+  "user.import",
   "audit.read",
   "audit.export",
   "security.read",
@@ -89,6 +113,12 @@ export const PERMISSION_CODES = [
   "role.update",
   "role.delete",
   "permission.read",
-  "permission.manage"
+  "permission.manage",
+  "department.read",
+  "department.create",
+  "department.update",
+  "department.delete",
+  "department.assign-manager",
+  "department.export"
 ] as const;
 export type PermissionCode = typeof PERMISSION_CODES[number];

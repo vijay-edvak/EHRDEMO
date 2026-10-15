@@ -1,0 +1,2 @@
+import mongoose from 'mongoose'; import { connectDatabases } from '../src/config/database'; import { DepartmentModel } from '../src/models/department.model';
+const names=['HR','Finance','Operations','Security','IT','Support','Compliance']; await connectDatabases(); for(const name of names)await DepartmentModel.updateOne({name},{$setOnInsert:{name,active:true}},{upsert:true}); console.info(`Seeded ${names.length} departments.`); await mongoose.disconnect();

@@ -1,2 +1,2 @@
-import { Router } from 'express'; import { healthRouter } from './health.routes'; import { authRouter } from './auth.routes'; import { rbacRouter } from './rbac.routes';
-export const apiRouter=Router(); apiRouter.use('/health',healthRouter); apiRouter.use('/auth',authRouter); apiRouter.use('/rbac',rbacRouter);
+import { Router } from 'express'; import { healthRouter } from './health.routes'; import { authRouter } from './auth.routes'; import { rbacRouter } from './rbac.routes'; import { practiceRouter } from './practice.routes'; import { userManagementRouter } from './user-management.routes'; import { departmentRouter } from './department.routes';
+export const apiRouter=Router(); apiRouter.use('/health',healthRouter); apiRouter.use('/auth',authRouter); apiRouter.use('/rbac',rbacRouter); apiRouter.use('/practices',practiceRouter); apiRouter.use('/users',userManagementRouter); apiRouter.use('/departments',departmentRouter);

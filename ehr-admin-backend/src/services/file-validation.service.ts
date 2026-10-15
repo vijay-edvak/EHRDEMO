@@ -1,0 +1,2 @@
+const allowed=new Set(['application/pdf','image/png','image/jpeg']);
+export function validateContracts(contracts:unknown):string[]{if(!Array.isArray(contracts))return [];const errors:string[]=[];if(contracts.length>5)errors.push('maximum 5 contracts');contracts.forEach((contract,index)=>{const item=contract as {mimeType?:string;sizeBytes?:number};if(!allowed.has(item.mimeType??''))errors.push(`contract ${index+1} has an unsupported file type`);if((item.sizeBytes??0)>5*1024*1024)errors.push(`contract ${index+1} exceeds 5 MB`);});return errors;}

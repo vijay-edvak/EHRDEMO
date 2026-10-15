@@ -1,9 +1,53 @@
 {
-  "practice": ["read", "create", "update", "delete"],
-  "invoice": ["read", "create", "update", "approve", "export"],
-  "user": ["read", "create", "update", "assign-role"],
-  "audit": ["read", "export"],
-  "security": ["read", "manage"],
-  "role": ["read", "create", "update", "delete"],
-  "permission": ["read", "manage"]
+  "practice": [
+    "read",
+    "create",
+    "update",
+    "delete",
+    "status",
+    "export"
+  ],
+  "invoice": [
+    "read",
+    "create",
+    "update",
+    "approve",
+    "export"
+  ],
+  "user": [
+    "read",
+    "create",
+    "update",
+    "delete",
+    "status",
+    "assign-role",
+    "export",
+    "import"
+  ],
+  "audit": [
+    "read",
+    "export"
+  ],
+  "security": [
+    "read",
+    "manage"
+  ],
+  "role": [
+    "read",
+    "create",
+    "update",
+    "delete"
+  ],
+  "permission": [
+    "read",
+    "manage"
+  ],
+  "department": [
+    "read",
+    "create",
+    "update",
+    "delete",
+    "assign-manager",
+    "export"
+  ]
 }
