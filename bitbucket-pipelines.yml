@@ -1,0 +1,22 @@
+image: node:20
+
+pipelines:
+  default:
+    - step:
+        name: Lint
+        caches: [node]
+        script:
+          - npm ci
+          - npm run lint
+    - step:
+        name: Test
+        caches: [node]
+        script:
+          - npm ci
+          - npm test -- --ci
+    - step:
+        name: Build
+        caches: [node]
+        script:
+          - npm ci
+          - npm run build
