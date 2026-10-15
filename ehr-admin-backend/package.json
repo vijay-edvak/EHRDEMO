@@ -11,7 +11,8 @@
     "migrate:rbac": "tsx scripts/migrate-rbac.ts",
     "seed:departments": "tsx scripts/seed-departments.ts",
     "seed:workflows": "tsx scripts/seed-workflows.ts",
-    "seed:plans": "tsx scripts/seed-plans.ts"
+    "seed:plans": "tsx scripts/seed-plans.ts",
+    "seed:demo": "tsx scripts/seed-demo.ts"
   },
   "dependencies": {
     "@types/node-cron": "^3.0.11",
@@ -32,6 +33,7 @@
     "qrcode": "^1.5.4",
     "rate-limiter-flexible": "^6.2.1",
     "sendgrid": "^5.2.3",
+    "socket.io": "^4.8.4",
     "uuid": "^10.0.0"
   },
   "devDependencies": {

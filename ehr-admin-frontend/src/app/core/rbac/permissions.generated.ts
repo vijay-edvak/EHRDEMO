@@ -163,6 +163,14 @@ export const PERMISSION_GROUPS = [
       "ai.recommend",
       "ai.export"
     ]
+  },
+  {
+    "name": "Notification operations",
+    "module": "notification",
+    "codes": [
+      "notification.read",
+      "notification.manage"
+    ]
   }
 ] as const;
 export const PERMISSION_CODES = [
@@ -239,6 +247,8 @@ export const PERMISSION_CODES = [
   "ai.view",
   "ai.manage",
   "ai.recommend",
-  "ai.export"
+  "ai.export",
+  "notification.read",
+  "notification.manage"
 ] as const;
 export type PermissionCode = typeof PERMISSION_CODES[number];

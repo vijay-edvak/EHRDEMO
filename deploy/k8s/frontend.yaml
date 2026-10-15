@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: ehr-admin-frontend }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: ehr-admin-frontend } }
+  template:
+    metadata: { labels: { app: ehr-admin-frontend } }
+    spec: { containers: [{name: frontend, image: ehr-admin-frontend:latest, ports: [{containerPort: 80}]}] }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: ehr-admin-frontend }
+spec: { type: LoadBalancer, selector: {app: ehr-admin-frontend}, ports: [{port: 80, targetPort: 80}] }

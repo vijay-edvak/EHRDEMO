@@ -1,0 +1,15 @@
+openapi: 3.0.3
+info:
+  title: EHR Admin Portal API
+  version: 1.0.0
+  description: Protected operations API. All mutation operations require authentication and CSRF protection where cookie flows are used.
+servers: [{url: /api}]
+paths:
+  /health: {get: {summary: Liveness, responses: {'200': {description: OK}}}}
+  /health/ready: {get: {summary: Readiness, responses: {'200': {description: Ready}, '503': {description: Not ready}}}}
+  /notifications: {get: {summary: List notifications, security: [{bearerAuth: []}], responses: {'200': {description: Notification list}}}}
+  /notifications/read-all: {post: {summary: Mark all notifications read, security: [{bearerAuth: []}], responses: {'204': {description: Updated}}}}
+  /ai/assistant/query: {post: {summary: Run a whitelisted audit assistant template, security: [{bearerAuth: []}], responses: {'200': {description: Query result}, '400': {description: Rejected query}}}}
+components:
+  securitySchemes:
+    bearerAuth: {type: http, scheme: bearer, bearerFormat: JWT}

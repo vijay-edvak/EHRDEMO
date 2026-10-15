@@ -1,0 +1,4 @@
+import { Schema, model } from 'mongoose';
+const notificationSchema=new Schema({type:{type:String,required:true,index:true},title:{type:String,required:true},body:{type:String,required:true},severity:{type:String,enum:['info','success','warning','critical'],default:'info',index:true},entityLink:String,userId:{type:String,index:true},role:{type:String,index:true},readAt:Date,createdAt:{type:Date,default:Date.now,index:true}},{collection:'notifications',versionKey:false});
+const preferenceSchema=new Schema({userId:{type:String,unique:true,index:true},inApp:{type:Boolean,default:true},email:{type:Boolean,default:true},quietStart:String,quietEnd:String},{collection:'notification_preferences',versionKey:false});
+export const NotificationModel=model('Notification',notificationSchema); export const NotificationPreferenceModel=model('NotificationPreference',preferenceSchema);

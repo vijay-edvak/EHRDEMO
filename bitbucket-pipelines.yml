@@ -1,22 +1,13 @@
-image: node:20
-
+image: node:22
 pipelines:
   default:
     - step:
-        name: Lint
+        name: Lint, test, build, audit and secret scan
         caches: [node]
         script:
-          - npm ci
+          - npm ci --ignore-scripts
           - npm run lint
-    - step:
-        name: Test
-        caches: [node]
-        script:
-          - npm ci
           - npm test -- --ci
-    - step:
-        name: Build
-        caches: [node]
-        script:
-          - npm ci
           - npm run build
+          - npm audit --audit-level=high
+          - '! git grep -nE "(mongodb\+srv|BEGIN (RSA|OPENSSH|EC|PGP) PRIVATE KEY|sk-[A-Za-z0-9]{20,})" -- '*.ts' '*.js' '*.json' '*.yml' '*.yaml' '*.md'
