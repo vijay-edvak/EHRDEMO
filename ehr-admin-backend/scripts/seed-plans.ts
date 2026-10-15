@@ -1,0 +1,1 @@
+import mongoose from 'mongoose'; import { connectDatabases } from '../src/config/database'; import { seedPlans } from '../src/services/billing.service'; await connectDatabases(); await seedPlans(); console.info('Seeded Basic, Professional, and Enterprise plan version 1.'); await mongoose.disconnect();

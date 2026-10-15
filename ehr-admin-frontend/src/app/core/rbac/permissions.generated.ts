@@ -20,7 +20,9 @@ export const PERMISSION_GROUPS = [
       "invoice.create",
       "invoice.update",
       "invoice.approve",
-      "invoice.export"
+      "invoice.void",
+      "invoice.export",
+      "invoice.email"
     ]
   },
   {
@@ -117,6 +119,28 @@ export const PERMISSION_GROUPS = [
       "delegation.revoke",
       "delegation.admin"
     ]
+  },
+  {
+    "name": "Billing operations",
+    "module": "billing",
+    "codes": [
+      "billing.read",
+      "billing.create",
+      "billing.update",
+      "billing.export"
+    ]
+  },
+  {
+    "name": "Subscription operations",
+    "module": "subscription",
+    "codes": [
+      "subscription.read",
+      "subscription.create",
+      "subscription.update",
+      "subscription.cancel",
+      "subscription.pause",
+      "subscription.resume"
+    ]
   }
 ] as const;
 export const PERMISSION_CODES = [
@@ -130,7 +154,9 @@ export const PERMISSION_CODES = [
   "invoice.create",
   "invoice.update",
   "invoice.approve",
+  "invoice.void",
   "invoice.export",
+  "invoice.email",
   "user.read",
   "user.create",
   "user.update",
@@ -171,6 +197,16 @@ export const PERMISSION_CODES = [
   "delegation.read",
   "delegation.create",
   "delegation.revoke",
-  "delegation.admin"
+  "delegation.admin",
+  "billing.read",
+  "billing.create",
+  "billing.update",
+  "billing.export",
+  "subscription.read",
+  "subscription.create",
+  "subscription.update",
+  "subscription.cancel",
+  "subscription.pause",
+  "subscription.resume"
 ] as const;
 export type PermissionCode = typeof PERMISSION_CODES[number];

@@ -12,7 +12,9 @@
     "create",
     "update",
     "approve",
-    "export"
+    "void",
+    "export",
+    "email"
   ],
   "user": [
     "read",
@@ -72,5 +74,19 @@
     "create",
     "revoke",
     "admin"
+  ],
+  "billing": [
+    "read",
+    "create",
+    "update",
+    "export"
+  ],
+  "subscription": [
+    "read",
+    "create",
+    "update",
+    "cancel",
+    "pause",
+    "resume"
   ]
 }

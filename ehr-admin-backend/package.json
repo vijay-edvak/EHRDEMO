@@ -10,7 +10,8 @@
     "seed:rbac": "tsx scripts/seed-rbac.ts",
     "migrate:rbac": "tsx scripts/migrate-rbac.ts",
     "seed:departments": "tsx scripts/seed-departments.ts",
-    "seed:workflows": "tsx scripts/seed-workflows.ts"
+    "seed:workflows": "tsx scripts/seed-workflows.ts",
+    "seed:plans": "tsx scripts/seed-plans.ts"
   },
   "dependencies": {
     "@types/node-cron": "^3.0.11",
