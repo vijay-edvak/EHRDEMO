@@ -96,5 +96,11 @@
     "security",
     "approvals",
     "export"
+  ],
+  "ai": [
+    "view",
+    "manage",
+    "recommend",
+    "export"
   ]
 }

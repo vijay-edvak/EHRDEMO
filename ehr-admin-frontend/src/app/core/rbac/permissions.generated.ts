@@ -153,6 +153,16 @@ export const PERMISSION_GROUPS = [
       "dashboard.approvals",
       "dashboard.export"
     ]
+  },
+  {
+    "name": "Ai operations",
+    "module": "ai",
+    "codes": [
+      "ai.view",
+      "ai.manage",
+      "ai.recommend",
+      "ai.export"
+    ]
   }
 ] as const;
 export const PERMISSION_CODES = [
@@ -225,6 +235,10 @@ export const PERMISSION_CODES = [
   "dashboard.revenue",
   "dashboard.security",
   "dashboard.approvals",
-  "dashboard.export"
+  "dashboard.export",
+  "ai.view",
+  "ai.manage",
+  "ai.recommend",
+  "ai.export"
 ] as const;
 export type PermissionCode = typeof PERMISSION_CODES[number];

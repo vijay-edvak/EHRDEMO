@@ -24,6 +24,7 @@ export const routes: Routes = [
       { path: 'workflow-builder', canMatch: [permissionGuard('workflow.read')], loadComponent: () => import('./features/workflow-builder/workflow-builder.component').then((m) => m.WorkflowBuilderComponent) },
       { path: 'billing', canMatch: [permissionGuard('billing.read')], loadComponent: () => import('./features/billing/billing.component').then((m) => m.BillingComponent) },
       { path: 'audit', canMatch: [permissionGuard('audit.view')], loadComponent: () => import('./features/audit/audit.component').then((m) => m.AuditComponent) },
+      { path: 'ai-center', canMatch: [permissionGuard('ai.view')], loadComponent: () => import('./features/ai-center/ai-center.component').then((m) => m.AiCenterComponent) },
     ],
   },
   { path: '**', redirectTo: '' },
